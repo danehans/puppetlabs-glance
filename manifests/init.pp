@@ -14,5 +14,6 @@ class glance(
   package { 'glance':
     name   => $::glance::params::package_name,
     ensure => $package_ensure,
+    tag    => "openstack",
   }
 }
