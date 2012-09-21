@@ -23,7 +23,11 @@ class glance::backend::swift(
   # modeled as its own config define so that any attempts to
   # define multiple backends will fail
   #
-  glance::api::config { 'backend':
+ package { 'python-swift' :
+    ensure  => present,
+    }
+
+ glance::api::config { 'backend':
     config => {
       'default_store' => 'swift',
     },
