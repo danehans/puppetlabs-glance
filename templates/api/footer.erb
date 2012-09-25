@@ -15,7 +15,26 @@ scrubber_datadir = /var/lib/glance/scrubber
 # Base directory that the Image Cache uses
 image_cache_dir = /var/lib/glance/image-cache/
 
+[keystone_authtoken]
+auth_host = <%= config['auth_host'] %>
+auth_port = <%= config['auth_port'] %>
+auth_protocol = <%= config['auth_protocol'] %>
+auth_uri = <%= config['auth_uri'] %>
 <% if config['auth_type'] == 'keystone' -%>
+admin_tenant_name = <%= config['keystone_tenant'] %>
+admin_user = <%= config['keystone_user'] %>
+admin_password = <%= config['keystone_password'] %>
+<% end -%>auth_host = 127.0.0.1
+
 [paste_deploy]
+# Name of the paste configuration file that defines the available pipelines
+#config_file = glance-api-paste.ini
+
+# Partial name of a pipeline in your paste configuration file with the
+# service name removed. For example, if your paste section name is
+# [pipeline:glance-api-keystone], you would configure the flavor below
+# as 'keystone'.
+#flavor=
+<% if config['auth_type'] == 'keystone' -%>
 flavor = keystone
 <% end -%>
