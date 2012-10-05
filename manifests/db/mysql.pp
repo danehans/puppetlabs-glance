@@ -17,7 +17,7 @@ class glance::db::mysql(
 
   require 'mysql::python'
 
-  mysql::db { $dbname:
+  galera::db { $dbname:
     user         => $user,
     password     => $password,
     host         => $host,
