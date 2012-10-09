@@ -1,4 +1,3 @@
-
 #
 # This class installs and configures the glance api server.
 #
@@ -47,7 +46,7 @@ class glance::api(
   $keystone_tenant = 'admin',
   $keystone_user = 'admin',
   $keystone_password = 'ChangeMe',
-  $sql_connection = 'sqlite:///var/lib/glance/glance.sqlite',
+  $sql_connection = 'sqlite:////var/lib/glance/glance.sqlite',
   $enabled           = true
 ) inherits glance {
 
