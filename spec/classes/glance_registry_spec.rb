@@ -15,7 +15,7 @@ describe 'glance::registry' do
       :bind_host        => '0.0.0.0',
       :bind_port        => '9191',
       :log_file         => '/var/log/glance/registry.log',
-      :sql_connection   => 'sqlite:///var/lib/glance/glance.sqlite',
+      :sql_connection   => 'sqlite:////var/lib/glance/glance.sqlite',
       :sql_idle_timeout => '3600',
       :enabled          => true
     }
@@ -29,7 +29,7 @@ describe 'glance::registry' do
       :bind_host => '127.0.0.1',
       :bind_port => '9111',
       :log_file => '/var/log/glance-registry.log',
-      :sql_connection => 'sqlite:///var/lib/glance.sqlite',
+      :sql_connection => 'sqlite:////var/lib/glance.sqlite',
       :sql_idle_timeout => '360',
       :enabled          => false
     }

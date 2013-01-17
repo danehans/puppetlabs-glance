@@ -1,5 +1,9 @@
 # ============ Swift Store Options =============================
 
+# Version of the authentication service to use
+# Valid versions are '2' for keystone and '1' for swauth and rackspace
+swift_store_auth_version = 2
+
 # Address where the Swift authentication service lives
 swift_store_auth_address = <%= config['swift_store_auth_address'] %>
 
@@ -36,3 +40,11 @@ swift_store_large_object_chunk_size = 200
 # `swift_store_auth_address` with 'snet-'.
 # Ex. https://example.com/v1.0/ -> https://snet-example.com/v1.0/
 swift_enable_snet = False
+
+# If set to True enables multi-tenant storage mode which causes Glance images
+# to be stored in tenant specific Swift accounts.
+#swift_store_multi_tenant = False
+
+# A list of tenants that will be granted read/write access on all Swift
+# containers created by Glance in multi-tenant mode.
+#swift_store_admin_tenants = []

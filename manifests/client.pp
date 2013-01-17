@@ -7,6 +7,7 @@ class glance::client (
 
   package { 'python-glance':
     name   => $::glance::params::client_package_name,
+    tag    => "openstack",
     ensure => $ensure,
   }
 
